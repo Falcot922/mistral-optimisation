@@ -1,0 +1,3 @@
+retriever,n_questions,corpus_size,recall@1,recall@3
+supervise_en,16,97,0.0,0.0
+multilingue_e5,16,97,0.4375,0.875

@@ -1,0 +1,18 @@
+[
+ {"question": "Pourquoi les 96 % d'accuracy de la v0.3 ne valent-ils rien ?", "gold": ["Les « 96 % » finaux ne valent rien"]},
+ {"question": "Que faut-il faire quand un token Hugging Face a été écrit en dur dans un notebook ?", "gold": ["Révoquer le token"]},
+ {"question": "Pourquoi le notebook de distillation plantait-il sur Kaggle au départ ?", "gold": ["n'installe pas `bitsandbytes`"]},
+ {"question": "Pourquoi multiplie-t-on la perte de distillation par T² ?", "gold": ["Le facteur `T²`"]},
+ {"question": "La distillation a-t-elle amélioré l'accuracy de l'élève de façon prouvée ?", "gold": ["p = 0,14", "p = 0.14"]},
+ {"question": "Pourquoi une loss de SimCSE proche de zéro ne prouve-t-elle rien ?", "gold": ["La loss de SimCSE tombe à 0,002"]},
+ {"question": "Pourquoi utilise-t-on le Mistral de unsloth plutôt que le dépôt officiel ?", "gold": ["Pourquoi un Mistral « unsloth »", "an ungated NF4 copy"]},
+ {"question": "À quoi sert le mode MINI ?", "gold": ["D'où le drapeau `MINI`", "Set `MINI = True`"]},
+ {"question": "Pourquoi peut-on distiller Mistral vers TinyLlama alors que leurs tokenizers sont différents ?", "gold": ["Comparer des classes plutôt que le vocabulaire entier", "Parce qu'on compare des scores de classe"]},
+ {"question": "Pourquoi model.encode() ne peut-il pas servir dans une boucle d'entraînement ?", "gold": ["`model.encode()` n'entraîne rien"]},
+ {"question": "Quelle erreur liée à torchao empêchait de poser le LoRA sur l'élève ?", "gold": ["incompatible version of torchao"]},
+ {"question": "Pourquoi le chiffre de 29 fois plus rapide est-il trompeur ?", "gold": ["« 29 fois plus rapide » compare", "The speed ratio is inflated"]},
+ {"question": "Qu'est-ce que PagedAttention dans vLLM ?", "gold": ["vLLM implémente PagedAttention"]},
+ {"question": "Quelle est la différence entre LoRA et QLoRA ?", "gold": ["QLoRA = LoRA + quantization 4-bit"]},
+ {"question": "Quel est l'objectif de la version 1.0 du projet ?", "gold": ["Rendre tout le projet visible"]},
+ {"question": "Quel Recall@5 obtient le modèle supervisé sur MS MARCO ?", "gold": ["73,7 %", "73.7%"]}
+]

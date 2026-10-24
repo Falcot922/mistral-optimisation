@@ -1,0 +1,8 @@
+.ipynb_checkpoints/
+__pycache__/
+.env
+# poids et sorties d'entraînement : ils vivent sur le Hub Hugging Face, pas dans git
+*.safetensors
+*.gguf
+outputs/
+.markdownlint.json

@@ -1,0 +1,15 @@
+{
+  "id": "pamperslegame/mistral-v05-distillation",
+  "title": "mistral-v05-distillation",
+  "code_file": "v0.5-distillation.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

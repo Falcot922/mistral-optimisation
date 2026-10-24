@@ -1,0 +1,178 @@
+[
+ {
+  "question": "Pourquoi les 96 % d'accuracy de la v0.3 ne valent-ils rien ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "DOCUMENTATION.md > 2. IMDB est trié par label : les résultats de la v0.3 ne mesurent rien",
+   "DOCUMENTATION.md > 2. IMDB est trié par label : les résultats de la v0.3 ne mesurent rien",
+   "ROADMAP.md > Ce que tu construis"
+  ],
+  "sans_contexte": "Les pourcentages d'accuracy ne valent rien si les données utilisées pour l'évaluation ne sont pas représentatives de l'ensemble des données que l'on veut prédire. Il est donc important de vérifier la qualité et la diversité des données d'apprentissage et d'évaluation pour avoir une estimation fiable de l'efficacité d'un modèle.",
+  "avec_contexte": "Les 96 % d'accuracy de la v0.3 ne valent rien parce qu'elle a été entraînée et évaluée sur des données négatives uniquement, ce qui a fait en sorte que le modèle apprit à répondre toujours « negative » et a donc une performance maximale sur ce jeu. Cela ne permet pas de mesurer la vraie qualité du modèle sur des données équilibrées."
+ },
+ {
+  "question": "Que faut-il faire quand un token Hugging Face a été écrit en dur dans un notebook ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "DOCUMENTATION.md > 1. Un token dans un notebook est un token compromis",
+   "DOCUMENTATION.md > 5. Piloter Kaggle en ligne de commande, et tester en petit d'abord",
+   "DOCUMENTATION.md > 3. Lire la première erreur, pas la dernière"
+  ],
+  "sans_contexte": "Si un token Hugging Face a été écrit en dur dans un notebook, il est préférable de le remplacer par une variable pour éviter les problèmes de maintenance et de réutilisation. Par exemple, si vous avez écrit `model = AutoModel.from_pretrained(\"bert-base-cased\")`, vous pouvez créer une variable `tokenizer` et l'initialiser avec `tokenizer = AutoTokenizer.from_pretrained(\"bert-base-cased\")`. Ensuite, vous pouvez utiliser `tokenizer` pour tokeniser vos données et `model` pour faire des prédictions.",
+  "avec_contexte": "Il faut révoquer le token Hugging Face, le lire depuis l'environnement (par exemple `os.environ[\"HF_TOKEN\"]` en local ou `UserSecretsClient().get_secret(...)` sur Kaggle), et relire le diff avant chaque commit en cherchant `hf_`."
+ },
+ {
+  "question": "Pourquoi le notebook de distillation plantait-il sur Kaggle au départ ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "DOCUMENTATION.md > 5. Piloter Kaggle en ligne de commande, et tester en petit d'abord",
+   "DOCUMENTATION.md > 3. Lire la première erreur, pas la dernière",
+   "DOCUMENTATION.md > 5. Piloter Kaggle en ligne de commande, et tester en petit d'abord"
+  ],
+  "sans_contexte": "Le notebook de distillation pouvait planter au début sur Kaggle car il y avait peut-être des problèmes de compatibilité entre les versions de certaines bibliothèques utilisées et celles installées sur le serveur de Kaggle. Il est également possible que des erreurs de syntaxe ou de codage aient été introduites lors de la création du notebook. Enfin, il est possible que le notebook ne soit pas optimisé pour fonctionner sur le serveur de Kaggle, ce qui peut entraîner des problèmes de performance. Il est donc important de vérifier que le notebook fonctionne correctement sur votre propre environnement avant de",
+  "avec_contexte": "Le notebook de distillation plantait à l'origine sur Kaggle car il manquait l'installation de la bibliothèque `bitsandbytes` nécessaire pour la quantification en 4 bits, qui n'était pas présente dans l'image Kaggle utilisée. De plus, la version de `torchao` installée par défaut sur Kaggle était trop ancienne pour être compatible avec la bibliothèque `peft` utilisée pour poser le LoRA sur l'élève. Ces deux problèmes ont été résolus en ajoutant une cellule d'installation de `bitsandbytes` et en désinstallant `torchao`"
+ },
+ {
+  "question": "Pourquoi multiplie-t-on la perte de distillation par T² ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "DOCUMENTATION.md > 6. Résultats de la distillation : lire un écart de 1,1 point",
+   "DOCUMENTATION.md > La perte",
+   "DOCUMENTATION.md > 4. Ce que la distillation v0.5 distille vraiment"
+  ],
+  "sans_contexte": "La perte de distillation est multipliée par T² (où T est la température absolue en kelvin) pour prendre en compte l'effet de la température sur la vitesse moléculaire et donc sur la perte de distillation. En effet, la vitesse moléculaire augmente avec la température, ce qui augmente la perte de distillation. Le facteur T² est utilisé pour simplifier les équations et prendre en compte cette relation non linéaire.",
+  "avec_contexte": "La multiplication de la perte de distillation par `T²` est une correction technique qui permet de réduire les gradients de la divergence KL. Cela permet d'éviter que l'augmentation de la température réduise en douce le poids de la distillation par rapport à la cross-entropy. En d'autres termes, cela permet de maintenir un bon équilibre entre l'imitation du teacher et la vérité des labels."
+ },
+ {
+  "question": "La distillation a-t-elle amélioré l'accuracy de l'élève de façon prouvée ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "DOCUMENTATION.md > 6. Résultats de la distillation : lire un écart de 1,1 point",
+   "DOCUMENTATION.md > 4. Ce que la distillation v0.5 distille vraiment",
+   "DOCUMENTATION.md > Ce que nos résultats disent de la théorie"
+  ],
+  "sans_contexte": "Non, la distillation n'a pas d'impact sur l'amélioration de l'accuracy d'un élève. Cela est lié à l'apprentissage et non à la chimie.",
+  "avec_contexte": "Non, la distillation n'a pas amélioré l'accuracy de l'élève de façon prouvée."
+ },
+ {
+  "question": "Pourquoi une loss de SimCSE proche de zéro ne prouve-t-elle rien ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "DOCUMENTATION.md > Les résultats",
+   "DOCUMENTATION.md > Deux pièges évités",
+   "DOCUMENTATION.md > Les résultats"
+  ],
+  "sans_contexte": "Une perte de SimCSE proche de zéro ne prouve rien car elle peut être due à un modèle trop simple ou trop adapté à un jeu de données spécifique, ce qui peut entraîner une sur-apprentissage et une mauvaise généralisation. Il est donc important d'évaluer la performance du modèle sur plusieurs jeux de données différents pour en déduire son efficacité.",
+  "avec_contexte": "Une loss de SimCSE proche de zéro ne prouve rien car elle ne compare qu'entre deux entraînements qui ont le même objectif. En d'autres termes, une loss proche de zéro ne veut pas dire que le modèle est bon, car il peut être trop facile de reconnaître un passage parmi 64 quand on a le même passage sous les yeux."
+ },
+ {
+  "question": "Pourquoi utilise-t-on le Mistral de unsloth plutôt que le dépôt officiel ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "DOCUMENTATION.md > 5. Piloter Kaggle en ligne de commande, et tester en petit d'abord",
+   "DOCUMENTATION.md > Pour vérifier que c'est acquis",
+   "ROADMAP.md > Le concept"
+  ],
+  "sans_contexte": "Le Mistral de l'Unsloth est un logiciel libre et open-source, ce qui permet à tout le monde de l'utiliser, de le modifier et de le partager. Le dépôt officiel peut être payant ou avoir des restrictions d'utilisation plus strictes. C'est pourquoi on peut préférer utiliser le Mistral de l'Unsloth.",
+  "avec_contexte": "1. L'élève témoin (`alpha = 0`) est indispensable pour comparer les performances du modèle distillé avec celles du modèle original. Il permet de voir si le distillation a bien permis de conserver les connaissances du modèle original.\n2. Avec `T = 100`, le soft label de la critique n° 858 serait la probabilité de chaque classe (par exemple, positive ou négative) selon le modèle. Le problème serait que le modèle pourrait avoir des résultats incohérents en raison de la grande température utilisée"
+ },
+ {
+  "question": "À quoi sert le mode MINI ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "DOCUMENTATION.md > Deux pièges évités",
+   "DOCUMENTATION.md > 5. Piloter Kaggle en ligne de commande, et tester en petit d'abord",
+   "DOCUMENTATION.md > 5. Piloter Kaggle en ligne de commande, et tester en petit d'abord"
+  ],
+  "sans_contexte": "Le mode MINI sert à réduire la taille de l'écran et les éléments de l'interface pour une utilisation plus facile sur des écrans petits ou des appareils mobiles.",
+  "avec_contexte": "Le mode MINI sert à vérifier que toutes les étapes d'un essai se déroulent correctement avant de passer à l'exécution complète. Il permet de vérifier que l'environnement est correctement configuré et que les étapes d'entraînement, de validation et de test s'exécutent sans erreur. Il permet également de réduire le temps d'exécution et la consommation de ressources en utilisant un nombre limité d'exemples et d'époques."
+ },
+ {
+  "question": "Pourquoi peut-on distiller Mistral vers TinyLlama alors que leurs tokenizers sont différents ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "DOCUMENTATION.md > Les trois familles de distillation",
+   "DOCUMENTATION.md > Pour vérifier que c'est acquis",
+   "DOCUMENTATION.md > 4. Ce que la distillation v0.5 distille vraiment"
+  ],
+  "sans_contexte": "Les modèles de langage peuvent être distillés entre eux même si leurs tokenisateurs sont différents, car la distillation est un processus qui transfère les connaissances d'un modèle plus grand (source) vers un modèle plus petit (cible) en conservant les performances sur les tâches de prédiction. Cela est fait en optimisant le modèle cible pour minimiser la perte de probabilité entre les sorties du modèle source et celles du modèle cible. Les tokenisateurs sont utilisés pour convertir les données de texte en entrée pour les modèles, mais la distillation ne",
+  "avec_contexte": "La distillation peut être effectuée entre Mistral et TinyLlama malgré des tokenizers différents car la distillation compare des classes plutôt que le vocabulaire entier. Cela permet de comparer les logits des deux modèles sans avoir besoin de les aligner à un même tokenizer."
+ },
+ {
+  "question": "Pourquoi model.encode() ne peut-il pas servir dans une boucle d'entraînement ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "DOCUMENTATION.md > Deux pièges évités",
+   "DOCUMENTATION.md > Les résultats",
+   "ROADMAP.md > Le concept"
+  ],
+  "sans_contexte": "`model.encode()` est utilisé pour convertir des données d'entrée en une forme que le modèle puisse utiliser. En trainement, nous avons généralement besoin de la sortie du modèle pour calculer la perte et mettre à jour les poids. Si `model.encode()` était utilisé dans une boucle d'entraînement, cela pourrait entraîner une boucle infinie, car la sortie du modèle n'est pas utilisée pour mettre à jour les poids. Il est donc préférable d'utiliser `model.predict()` ou `model.call()` pour obtenir la",
+  "avec_contexte": "`model.encode()` ne peut pas servir dans une boucle d'entraînement car cette fonction de `sentence-transformers` coupe les gradients et désactive le dropout, ce qui empêche la loss de s'apprendre et rend les deux vues SimCSE identiques. Il faut appeler le modèle directement, en mode `train()`."
+ },
+ {
+  "question": "Quelle erreur liée à torchao empêchait de poser le LoRA sur l'élève ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "DOCUMENTATION.md > 5. Piloter Kaggle en ligne de commande, et tester en petit d'abord",
+   "ROADMAP.md > Ce que tu apprends",
+   "DOCUMENTATION.md > Pour vérifier que c'est acquis"
+  ],
+  "sans_contexte": "L'erreur liée à torchao consistait à utiliser des paramètres de modèle pré-entraînés sur le dataset LoRA qui n'étaient pas adaptés, ce qui empêchait de poser le LoRA sur l'élève.",
+  "avec_contexte": "L'erreur liée à torchao empêchait de poser le LoRA sur l'élève car la version de torchao de Kaggle était trop ancienne et incompatible avec la version utilisée par peft, qui est vérifiée dès qu'il est installé, même si on ne l'utilise pas. On a donc dû le désinstaller en tête de notebook."
+ },
+ {
+  "question": "Pourquoi le chiffre de 31 fois plus rapide est-il trompeur ?",
+  "bon_passage_retrouve": false,
+  "sources": [
+   "DOCUMENTATION.md > Les résultats",
+   "DOCUMENTATION.md > La perte",
+   "DOCUMENTATION.md > 6. Résultats de la distillation : lire un écart de 1,1 point"
+  ],
+  "sans_contexte": "La réponse est que le chiffre de 31 fois plus rapide peut être trompeur car il ne prend pas en compte les facteurs tels que la complexité du problème, la taille des données, la qualité des algorithmes utilisés, etc. Il ne sert donc pas toujours à mesurer la vraie efficacité d'un algorithme.",
+  "avec_contexte": "Le chiffre de 31 fois plus rapide est trompeur car il ne prend pas en compte la qualité des résultats. En effet, le temps nécessaire pour obtenir un résultat ne peut pas être utilisé seul pour juger de l'efficacité d'un algorithme. Il est important de considérer également la qualité des résultats obtenus, comme le Recall@5 qui passe de 3 % à 74 %."
+ },
+ {
+  "question": "Qu'est-ce que PagedAttention dans vLLM ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "ROADMAP.md > Ce que tu apprends",
+   "ROADMAP.md > Étapes",
+   "ROADMAP.md > Ce que tu apprends"
+  ],
+  "sans_contexte": "PagedAttention est une méthode d'attention utilisée dans vLLM (Variational Language Model) pour gérer les données en plusieurs pages. Elle permet de concentrer l'attention sur les parties importantes de chaque page lors de la génération de texte.",
+  "avec_contexte": "PagedAttention est une technique de gestion de la mémoire KV cache dans vLLM, qui fonctionne comme un système d'exploitation gère la mémoire virtuelle. Elle permet d'améliorer le throughput de l'inférence LLM de 20 à 30 fois par rapport à une inférence naïve."
+ },
+ {
+  "question": "Quelle est la différence entre LoRA et QLoRA ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "ROADMAP.md > V0.3 — Fine-tuning efficace avec QLoRA",
+   "ROADMAP.md > Ce que tu apprends",
+   "ROADMAP.md > Le concept"
+  ],
+  "sans_contexte": "La LoRa (Long Range) est une technologie de communication sans fil basée sur des fréquences de bande large et de faible débit, utilisée pour des réseaux de type IoT (Internet des Objets). Elle permet d'envoyer des données sur de longues distances avec une consommation énergétique faible.\n\nQuant à QLoRa (Quasi LoRa), c'est une technologie concurrentielle à LoRa, qui offre des performances similaires en termes de consommation énergétique et de portée, mais avec des fréquences différentes. Elle est utilisée dans cert",
+  "avec_contexte": "La différence entre LoRA et QLoRA est que LoRA ajoute des petites matrices adaptateurs pour modifier les poids originaux, en ne nécessitant que 1% des paramètres totaux. QLoRA est une extension de LoRA, qui inclut également la quantification 4-bit du modèle de base, ce qui permet de réduire encore plus la consommation de mémoire VRAM et de faire tourner le tout sur un seul GPU 16GB."
+ },
+ {
+  "question": "Quel est l'objectif de la version 1.0 du projet ?",
+  "bon_passage_retrouve": false,
+  "sources": [
+   "ROADMAP.md > Ce que tu construis",
+   "ROADMAP.md > Ce que ce projet dit à un recruteur ML Engineer",
+   "ROADMAP.md > V0.6 — Serving optimisé"
+  ],
+  "sans_contexte": "L'objectif de la version 1.0 du projet est généralement de livrer une version fonctionnelle et stable de l'application, qui répond aux besoins initiaux et aux exigences spécifiées dans les spécifications du projet.",
+  "avec_contexte": "L'objectif de la version 1.0 du projet est de déployer le meilleur modèle optimisé sur une API publique rapide, économique et capable de répondre aux trois dimensions de qualité, vitesse et mémoire."
+ },
+ {
+  "question": "Quel Recall@5 obtient le modèle supervisé sur MS MARCO ?",
+  "bon_passage_retrouve": true,
+  "sources": [
+   "DOCUMENTATION.md > Les résultats",
+   "DOCUMENTATION.md > Les résultats",
+   "DOCUMENTATION.md > Le problème"
+  ],
+  "sans_contexte": "Le modèle supervisé sur MS MARCO obtient un Recall@5 variable, car il s'agit d'un modèle en apprentissage continu qui est entraîné sur des données différentes et peut être optimisé pour différents objectifs. Il est courant de voir des scores de Recall@5 compris entre 0,3 et 0,5 pour les modèles de recherche de documents.",
+  "avec_contexte": "Le modèle supervisé obtient un Recall@5 de 73,7 % sur MS MARCO."
+ }
+]

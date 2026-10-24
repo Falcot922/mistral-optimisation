@@ -1,0 +1,5 @@
+model,n_queries,corpus_size,recall@1,recall@5,recall@10
+minilm_brut,1000,9984,0.01,0.032,0.039
+simcse,1000,9984,0.033,0.086,0.121
+supervise,1000,9984,0.256,0.737,0.879
+reference,1000,9984,0.422,0.892,0.985

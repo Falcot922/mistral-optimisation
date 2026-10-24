@@ -1,0 +1,67 @@
+[
+ {
+  "question": ". what is a corporation?",
+  "reference": [
+   "A corporation is a company or group of people authorized to act as a single entity and recognized as such in law."
+  ],
+  "sans_contexte": "A corporation is a legal entity that is separate from its owners (shareholders). It has its own rights, privileges, and liabilities, and can conduct business, enter into contracts, sue, and be sued in its own name. It is created by a set of documents, typically articles of incorporation, and is overseen by a board of directors.",
+  "avec_contexte": "A corporation is an association of individuals, created by law, that has a continuous existence independent of its members, and distinct powers and liabilities from its members. It is often incorporated in a specific nation, within a smaller subset such as a state or province, and is governed by the laws of incorporation in that state. Corporations may issue stock, be classified as non-stock, and are usually governed by their shareholders.",
+  "contexte": [
+   "Corporation definition, an association of individuals, created by law or under authority of law, having a continuous existence independent of the existences of its members, and powers and liabilities distinct from those of its members. See more.",
+   "A company is incorporated in a specific nation, often within the bounds of a smaller subset of that nation, such as a state or province. The corporation is then governed by the laws of incorporation in that state. A corporation may issue stock, either private or public, or may be classified as a non-stock corporation. If stock is issued, the corporation will usually be governed by its shareholders, either directly or indirectly.",
+   "Examples of corporation in a Sentence. 1  He works as a consultant for several large corporations. 2  a substantial corporation that showed that he was a sucker for all-you-can-eat buffets."
+  ]
+ },
+ {
+  "question": "why did rachel carson write an obligation to endure",
+  "reference": [
+   "Rachel Carson writes The Obligation to Endure because believes that as man tries to eliminate unwanted insects and weeds, however he is actually causing more problems by polluting the environment."
+  ],
+  "sans_contexte": "Rachel Carson wrote \"Silent Spring\" as an obligation to raise awareness about the harmful effects of pesticides, particularly DDT, on the environment and human health. She was deeply concerned about the indiscriminate use of chemicals in agriculture and their long-term consequences, which she believed were leading to a \"silent spring\" – a world without birds and other wildlife. Her book was a call to action, urging policymakers and the public to take responsibility for preserving",
+  "avec_contexte": "Rachel Carson wrote \"The Obligation to Endure\" as a passionate plea to raise awareness about the harmful effects of pesticides, herbicides, and fertilizers on the environment and its inhabitants. She believed it was an obligation for humanity to endure the consequences of these chemicals and find alternative, less harmful methods for pest control.",
+  "contexte": [
+   "“The Obligation to Endure” from Silent Springby Rachel Carson. Copyright © 1962 by Rachel L. Carson.",
+   "The Obligation to Endure by Rachel Carson Rachel Carson's essay on The Obligation to Endure, is a very convincing argument about the harmful uses of chemicals, pesticides, herbicides, and fertilizers on the environment.",
+   "In, “Silent Spring” an excerpt from Rachel Carson’s, “The Obligation to Endure,” Carson suggests that the pesticides and insecticides we have are harmful to more than just the environment. Rachel Carson is an author who is passionate about the environment and concerned about the well being of its inhabitants."
+  ]
+ },
+ {
+  "question": "symptoms of a dying mouse",
+  "reference": [
+   "The symptoms of a dying mouse are runny eyes, sneezing, wheezing, shaking, fluctuating body temperature, tiredness, loss of appetite, and dull coat."
+  ],
+  "sans_contexte": "A dying mouse may exhibit the following symptoms:\n\n1. Lethargy: The mouse may appear weak, sluggish, or unresponsive.\n2. Weight loss: A significant loss of weight can indicate illness or malnutrition.\n3. Ruffled fur: The mouse's fur may look unkempt or matted, which can be a sign of poor health.\n4. Reduced appetite: The mouse may refuse food or drink, or show a",
+  "avec_contexte": "Symptoms of a dying mouse include labored breathing, shaking, loss of appetite, watery eyes, fatigue, sitting hunched over or lying down, sometimes hair loss, runny eyes, sneezing, wheezing, fluctuating body temperature, tiredness, loss of appetite, and a dull coat. If the mouse becomes limp and struggles to walk, it is a sign of severe illness and the mouse should be taken to the vet immediately. To prevent influenza",
+  "contexte": [
+   "This can be fatal quite quickly to mice. 1  It is caused by dusty sawdust (not wood shavings), dirty or damp conditions, unhygienic routine, or filthy bedding. The symptoms include: 2  laboured breathing. 3  shaking. 4  loss of appetite. 5  watery eyes. 6  fatigue. 7  sitting hunched over or lying down. ( 8 sometimes) hair loss.",
+   "The symptoms are similar but the mouse will be in much worse condition: 1  runny eyes. 2  sneezing. 3  wheezing. 4  shaking. 5  fluctuating body temperature. 6  tiredness. 7  loss of appetite. 8  dull coat.",
+   "The symptoms are similar but the mouse will be in much worse condition: runny eyes; sneezing; wheezing; shaking; fluctuating body temperature; tiredness; loss of appetite; dull coat; If these symptoms persist or worsen, or the mouse becomes limp and struggles to walk, then the mouse must go to the vet's or it could die. To prevent influenza, do not touch your pet if you have flu, as mice catch it from humans."
+  ]
+ },
+ {
+  "question": "average number of lightning strikes per day",
+  "reference": [
+   "Globally 8,640,000 lightning strikes per day."
+  ],
+  "sans_contexte": "The average number of lightning strikes per day globally is approximately 44,000 to 88,000. However, this number can vary significantly depending on the region, season, and weather conditions. For example, the United States experiences around 25 million strikes per year, which equates to about 65,000 strikes per day.",
+  "avec_contexte": "The average number of lightning strikes per day on Earth is approximately 8 million times, according to the National Severe Storms Laboratory.",
+  "contexte": [
+   "Approximately 300,000 lightning strikes hit the ground in Britain each year with 30 percent of reported lightning strikes causing severe damage. Each year 30 to 60 people are recorded as being struck by lightning, 3 of whom, on average, die (14 in 1984 compared to 2 in 2005).",
+   "Quick Answer. Lightning strikes reach the ground on Earth as much as 8 million times per day or 100 times per second, according to the National Severe Storms Laboratory. Out of all the lightning strikes in the world, the United States accounts for about 20 million of the total number of lightning strikes each year. Keep Learning.",
+   "An average lightning strike discharges about 30,000 amperes (20,000 amperes in the UK). The current in a lightning strike typically ranges from 5,000 to 50,000 amperes depending on the strength of storm. NASA has recorded strikes of 100,000 amperes and there are other reports of strikes over 200,000 amperes."
+  ]
+ },
+ {
+  "question": "can you burn your lawn with fertilizer",
+  "reference": [
+   "Yes, over fertilizing can burn lawn."
+  ],
+  "sans_contexte": "No, it is not possible to burn your lawn with fertilizer. Fertilizers are designed to provide nutrients for plant growth, not to cause combustion. However, if the fertilizer is over-applied or contains an excessive amount of nitrogen, it can lead to excessive growth, which can make the lawn more susceptible to disease and pests, and potentially cause brown patches. But burning is not a side effect of using fertilizer.",
+  "avec_contexte": "Yes, it is possible to burn your lawn with fertilizer, particularly if it contains a high amount of nitrogen. Over-application of high nitrogen fertilizer can lead to lawn burn, causing the grass to turn yellow.",
+  "contexte": [
+   "Fertilizing Tips. Watering and mowing alone will not make a healthy lawn. It must be fertilized. We have included a starter fertilizer in the mixture applied, but it is only sufficient to supply enough nutrients for about 30 to 45 days. It is important for the development of a healthy lawn that a fertilization program be started at this time.",
+   "When fertilizing start with a dry lawn. Using either a broadcast or drop spreader, apply one-half of the recommended amount in one direction then spread the remaining half at right angles to the first. After fertilizing, it is necessary to water your lawn to wash the material off the grass and into the soil.",
+   "Verify the reason for the lawn burn. Grass will turn yellow due to an over application of high nitrogen fertilizer. The lawn will also turn yellow when it goes dormant in the fall. Rake the lawn to remove as much dead grass as possible. Remove several inches of soil if the herbicide was not a high nitrogen type."
+  ]
+ }
+]

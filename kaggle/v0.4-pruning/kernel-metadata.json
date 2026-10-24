@@ -1,0 +1,15 @@
+{
+  "id": "pamperslegame/mistral-v04-pruning",
+  "title": "mistral-v04-pruning",
+  "code_file": "pruning.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}
